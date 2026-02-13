@@ -763,3 +763,35 @@ Limits template depth to 7.
   </div>
 </div>
 ```
+
+## Releasing a New Version
+
+To create a new version and update the changelog, follow these steps:
+
+### 1. Ensure everything is committed
+Make sure your working directory is clean.
+
+### 2. Run tests and build (optional but recommended)
+```bash
+pnpm build
+```
+
+### 3. Bump the version
+Use the `pnpm version` command. This will automatically update `package.json`, generate/update `CHANGELOG.md`, and create a git commit and tag.
+
+- **Patch** (bug fixes): `pnpm version patch`
+- **Minor** (new features): `pnpm version minor`
+- **Major** (breaking changes): `pnpm version major`
+
+*Note: For breaking changes, ensure your commit messages use the `!` suffix (e.g., `feat!: ...`) or include `BREAKING CHANGE:` in the footer to ensure the changelog reflects them correctly.*
+
+### 4. Push changes and tags
+```bash
+git push origin main --tags
+```
+
+### 5. Publish to NPM
+```bash
+pnpm publish
+```
+The `prepublishOnly` script will automatically run `pnpm build` before publishing.
