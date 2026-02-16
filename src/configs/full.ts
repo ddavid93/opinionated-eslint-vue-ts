@@ -8,7 +8,6 @@ import skipFormatting from "@vue/eslint-config-prettier/skip-formatting";
 import globals from "globals";
 import pluginImportX from "eslint-plugin-import-x";
 import pluginOxlint from "eslint-plugin-oxlint";
-import { configs as pnpmConfigs } from "eslint-plugin-pnpm";
 import prettier from "eslint-plugin-prettier/recommended";
 import ts from "typescript-eslint";
 import pluginUnicorn from "eslint-plugin-unicorn";
@@ -245,7 +244,7 @@ export default defineConfigWithVueTs(
   },
 
   // ==============================================================================
-  // 6. Integrations (Oxlint, Prettier, pnpm)
+  // 6. Integrations (Oxlint, Prettier)
   // ==============================================================================
 
   {
@@ -262,8 +261,6 @@ export default defineConfigWithVueTs(
   },
 
   pluginOxlint.configs["flat/recommended"],
-
-  pnpmConfigs.recommended,
 
   skipFormatting,
 );

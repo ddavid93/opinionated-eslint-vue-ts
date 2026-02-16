@@ -26,7 +26,6 @@ Install required peer dependencies for your stack:
 - @vue/eslint-config-prettier
 - eslint-plugin-import-x
 - eslint-plugin-oxlint
-- eslint-plugin-pnpm
 - eslint-plugin-unicorn
 - @vitest/eslint-plugin
 - globals
@@ -69,7 +68,6 @@ This package bundles a full flat config that layers:
 - Unicorn recommended
 - Vitest recommended
 - Oxlint recommended
-- pnpm recommended
 - Prettier integration
 - Custom local rules (documented below)
 

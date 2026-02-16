@@ -11,6 +11,9 @@ importers:
       '@eslint/js':
         specifier: 9.39.2
         version: 9.39.2
+      '@types/node':
+        specifier: ^25.2.3
+        version: 25.2.3
       '@vitest/eslint-plugin':
         specifier: 1.6.7
         version: 1.6.7(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
@@ -29,9 +32,6 @@ importers:
       eslint-plugin-oxlint:
         specifier: 1.46.0
         version: 1.46.0
-      eslint-plugin-pnpm:
-        specifier: 1.5.0
-        version: 1.5.0(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-prettier:
         specifier: 5.5.5
         version: 5.5.5(eslint-config-prettier@10.1.8(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.1)
@@ -907,11 +907,6 @@ packages:
 
   eslint-plugin-oxlint@1.46.0:
     resolution: {integrity: sha512-QE+AoIpJ3cck+eRbLf31Xav3PDtcd48/Y/GBHh7xFq7sgDRYwXkxkr7FhlzhGmFzhcbVSJIff06GVnhh3OeIuw==}
-
-  eslint-plugin-pnpm@1.5.0:
-    resolution: {integrity: sha512-ayMo1GvrQ/sF/bz1aOAiH0jv9eAqU2Z+a1ycoWz/uFFK5NxQDq49BDKQtBumcOUBf2VHyiTW4a8u+6KVqoIWzQ==}
-    peerDependencies:
-      eslint: ^9.0.0
 
   eslint-plugin-prettier@5.5.5:
     resolution: {integrity: sha512-hscXkbqUZ2sPithAuLm5MXL+Wph+U7wHngPBv9OMWwlP8iaflyxpjTYZkmdgB4/vPIhemRlBEoLrH7UC1n7aUw==}
@@ -2519,17 +2514,6 @@ snapshots:
   eslint-plugin-oxlint@1.46.0:
     dependencies:
       jsonc-parser: 3.3.1
-
-  eslint-plugin-pnpm@1.5.0(eslint@9.39.2(jiti@2.6.1)):
-    dependencies:
-      empathic: 2.0.0
-      eslint: 9.39.2(jiti@2.6.1)
-      jsonc-eslint-parser: 2.4.2
-      pathe: 2.0.3
-      pnpm-workspace-yaml: 1.5.0
-      tinyglobby: 0.2.15
-      yaml: 2.8.2
-      yaml-eslint-parser: 2.0.0
 
   eslint-plugin-prettier@5.5.5(eslint-config-prettier@10.1.8(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))(prettier@3.8.1):
     dependencies:
