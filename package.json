@@ -40,9 +40,12 @@
   "scripts": {
     "build": "tsdown",
     "clean": "rm -rf dist",
+    "format": "prettier --write src/",
+    "install-packages": "pnpm install",
+    "prepare": "husky",
     "prepublishOnly": "pnpm build",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "prepare": "husky"
+    "upgrade-packages": "pnpm upgrade --latest",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "publishConfig": {
     "access": "public"
@@ -63,10 +66,11 @@
     "typescript-eslint": "8.55.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.1",
-    "@commitlint/config-conventional": "^20.4.1",
-    "conventional-changelog-cli": "^5.0.0",
+    "@commitlint/cli": "20.4.1",
+    "@commitlint/config-conventional": "20.4.1",
+    "conventional-changelog-cli": "5.0.0",
     "husky": "9.1.7",
-    "tsdown": "^0.20.3"
+    "prettier": "3.8.1",
+    "tsdown": "0.20.3"
   }
 }
