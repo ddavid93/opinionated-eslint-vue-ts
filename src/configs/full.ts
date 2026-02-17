@@ -100,7 +100,12 @@ export default defineConfigWithVueTs(
   {
     files: ["**/*.vue"],
     rules: {
-      "unicorn/filename-case": "off",
+      "unicorn/filename-case": [
+        "error",
+        {
+          case: "pascalCase",
+        },
+      ],
     },
   },
 
