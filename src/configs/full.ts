@@ -97,6 +97,12 @@ export default defineConfigWithVueTs(
 
   // Unicorn (Opinionated)
   pluginUnicorn.configs.recommended,
+  {
+    files: ["**/*.vue"],
+    rules: {
+      "unicorn/filename-case": "off",
+    },
+  },
 
   // ==============================================================================
   // 2. Vue Component Rules

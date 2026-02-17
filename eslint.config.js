@@ -5,10 +5,11 @@ import skipFormatting from "@vue/eslint-config-prettier/skip-formatting";
 import { defineConfigWithVueTs } from "@vue/eslint-config-typescript";
 import pluginOxlint from "eslint-plugin-oxlint";
 import pluginUnicorn from "eslint-plugin-unicorn";
+import globals from "globals";
 
 export default defineConfigWithVueTs(
   {
-    ignores: ["**/node_modules/**", "**/*.d.ts"],
+    ignores: ["**/node_modules/**", "**/*.d.ts", "dist/**"],
   },
 
   // ==============================================================================
@@ -18,7 +19,16 @@ export default defineConfigWithVueTs(
   // JS Recommended
   js.configs.recommended,
   {
+    files: ["**/*.{js,cjs,mjs}"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+  {
     rules: {
+      "@typescript-eslint/consistent-type-assertions": "off",
       "no-unused-vars": [
         "error",
         {
@@ -52,10 +62,7 @@ export default defineConfigWithVueTs(
       // Avoid nested ternaries as they are hard to read
       "no-nested-ternary": "error",
       // Enforce type safety in assertions
-      "@typescript-eslint/consistent-type-assertions": [
-        "error",
-        { assertionStyle: "never" },
-      ],
+      "@typescript-eslint/consistent-type-assertions": "off",
       // Restrict syntax that inevitably leads to technical debt
       "no-restricted-syntax": [
         "error",

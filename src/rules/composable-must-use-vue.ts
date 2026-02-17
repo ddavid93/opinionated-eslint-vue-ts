@@ -18,7 +18,9 @@ interface ImportDeclarationNode {
 }
 
 function isImportDeclaration(node: unknown): node is ImportDeclarationNode {
-  if (!node || typeof node !== "object") return false;
+  if (!node || typeof node !== "object") {
+    return false;
+  }
   const candidate = node as ImportDeclarationNode;
   return (
     candidate.type === "ImportDeclaration" &&
@@ -34,18 +36,24 @@ const rule: Rule.RuleModule = {
     },
   },
   create(context) {
-    if (!isComposableFilename(context.filename)) return {};
+    if (!isComposableFilename(context.filename)) {
+      return {};
+    }
     let hasVueImport = false;
 
     const listeners: Rule.RuleListener = {
       ImportDeclaration(node) {
-        if (!isImportDeclaration(node)) return;
+        if (!isImportDeclaration(node)) {
+          return;
+        }
         if (VALID_VUE_SOURCES.has(node.source.value)) {
           hasVueImport = true;
         }
       },
       "Program:exit"(node) {
-        if (hasVueImport) return;
+        if (hasVueImport) {
+          return;
+        }
         context.report({
           node,
           messageId: "notAComposable",

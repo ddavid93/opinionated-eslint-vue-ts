@@ -22,13 +22,17 @@ function isLogicalExpression(node: BaseNode): node is LogicalExpressionNode {
 }
 
 function isIfStatement(node: unknown): node is IfStatementNode {
-  if (!node || typeof node !== "object") return false;
+  if (!node || typeof node !== "object") {
+    return false;
+  }
   const candidate = node as IfStatementNode;
   return candidate.type === "IfStatement";
 }
 
 function countOperators(node: BaseNode | null): number {
-  if (!node) return 0;
+  if (!node) {
+    return 0;
+  }
   if (isLogicalExpression(node)) {
     return 1 + countOperators(node.left) + countOperators(node.right);
   }
@@ -45,7 +49,9 @@ const rule: Rule.RuleModule = {
   create(context) {
     const listeners: Rule.RuleListener = {
       IfStatement(node) {
-        if (!isIfStatement(node)) return;
+        if (!isIfStatement(node)) {
+          return;
+        }
         const count = countOperators(node.test);
         if (count >= OPERATOR_THRESHOLD) {
           context.report({

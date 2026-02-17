@@ -16,7 +16,9 @@ interface TSTypeAliasDeclarationNode {
 }
 
 function isIdentifier(node: unknown): node is IdentifierNode {
-  if (!node || typeof node !== "object") return false;
+  if (!node || typeof node !== "object") {
+    return false;
+  }
   const candidate = node as IdentifierNode;
   return candidate.type === "Identifier" && typeof candidate.name === "string";
 }
@@ -24,7 +26,9 @@ function isIdentifier(node: unknown): node is IdentifierNode {
 function isTSInterfaceDeclaration(
   node: unknown,
 ): node is TSInterfaceDeclarationNode {
-  if (!node || typeof node !== "object") return false;
+  if (!node || typeof node !== "object") {
+    return false;
+  }
   const candidate = node as TSInterfaceDeclarationNode;
   return (
     candidate.type === "TSInterfaceDeclaration" && isIdentifier(candidate.id)
@@ -34,7 +38,9 @@ function isTSInterfaceDeclaration(
 function isTSTypeAliasDeclaration(
   node: unknown,
 ): node is TSTypeAliasDeclarationNode {
-  if (!node || typeof node !== "object") return false;
+  if (!node || typeof node !== "object") {
+    return false;
+  }
   const candidate = node as TSTypeAliasDeclarationNode;
   return (
     candidate.type === "TSTypeAliasDeclaration" && isIdentifier(candidate.id)
@@ -51,13 +57,17 @@ const rule: Rule.RuleModule = {
   create(context) {
     const listeners: Rule.RuleListener = {
       TSInterfaceDeclaration(node) {
-        if (!isTSInterfaceDeclaration(node)) return;
+        if (!isTSInterfaceDeclaration(node)) {
+          return;
+        }
         if (!node.id.name.startsWith("I")) {
           context.report({ node: node.id, messageId: "interfacePrefix" });
         }
       },
       TSTypeAliasDeclaration(node) {
-        if (!isTSTypeAliasDeclaration(node)) return;
+        if (!isTSTypeAliasDeclaration(node)) {
+          return;
+        }
         if (!node.id.name.endsWith("Type")) {
           context.report({ node: node.id, messageId: "typeSuffix" });
         }

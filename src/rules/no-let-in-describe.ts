@@ -16,19 +16,25 @@ interface VariableDeclarationNode {
 }
 
 function isIdentifier(node: unknown): node is IdentifierNode {
-  if (!node || typeof node !== "object") return false;
+  if (!node || typeof node !== "object") {
+    return false;
+  }
   const candidate = node as IdentifierNode;
   return candidate.type === "Identifier" && typeof candidate.name === "string";
 }
 
 function isCallExpression(node: unknown): node is CallExpressionNode {
-  if (!node || typeof node !== "object") return false;
+  if (!node || typeof node !== "object") {
+    return false;
+  }
   const candidate = node as CallExpressionNode;
   return candidate.type === "CallExpression" && isIdentifier(candidate.callee);
 }
 
 function isVariableDeclaration(node: unknown): node is VariableDeclarationNode {
-  if (!node || typeof node !== "object") return false;
+  if (!node || typeof node !== "object") {
+    return false;
+  }
   const candidate = node as VariableDeclarationNode;
   return (
     candidate.type === "VariableDeclaration" &&
@@ -36,6 +42,13 @@ function isVariableDeclaration(node: unknown): node is VariableDeclarationNode {
       candidate.kind === "const" ||
       candidate.kind === "var")
   );
+}
+
+function isDescribeCall(node: unknown): node is CallExpressionNode {
+  if (!isCallExpression(node)) {
+    return false;
+  }
+  return node.callee.name === "describe" || node.callee.name === "context";
 }
 
 const rule: Rule.RuleModule = {
@@ -48,20 +61,21 @@ const rule: Rule.RuleModule = {
   create(context) {
     let describeDepth = 0;
 
-    function isDescribeCall(node: unknown): node is CallExpressionNode {
-      if (!isCallExpression(node)) return false;
-      return node.callee.name === "describe" || node.callee.name === "context";
-    }
-
     const listeners: Rule.RuleListener = {
       CallExpression(node) {
-        if (isDescribeCall(node)) describeDepth += 1;
+        if (isDescribeCall(node)) {
+          describeDepth += 1;
+        }
       },
       "CallExpression:exit"(node) {
-        if (isDescribeCall(node)) describeDepth -= 1;
+        if (isDescribeCall(node)) {
+          describeDepth -= 1;
+        }
       },
       VariableDeclaration(node) {
-        if (!isVariableDeclaration(node)) return;
+        if (!isVariableDeclaration(node)) {
+          return;
+        }
         if (describeDepth > 0 && node.kind === "let") {
           context.report({ node, messageId: "noLetInDescribe" });
         }
