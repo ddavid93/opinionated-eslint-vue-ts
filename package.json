@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-opinionated-vue-ts",
   "version": "2.0.0",
-  "description": "Opinionated ESLint rules and flat config for Vue + TypeScript projects.",
+  "description": "Comprehensive, opinionated ESLint plugin and flat config for Vue and TypeScript, featuring custom architecture rules and optimized integrations (Prettier, Vitest, Unicorn, Oxlint).",
   "license": "MIT",
   "keywords": [
     "eslint",
