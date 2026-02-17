@@ -1,3 +1,12 @@
+# [2.0.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v1.0.0...v2.0.0) (2026-02-17)
+
+
+### Features
+
+* prettier and linting code ([18df9c4](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/18df9c4281397c2bdac37a8bbb22ef73b9a672c6))
+
+
+
 # [1.1.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v1.0.0...v1.1.0) (2026-02-16)
 
 
