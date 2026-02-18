@@ -1,3 +1,12 @@
+# [2.6.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.5.0...v2.6.0) (2026-02-18)
+
+
+### Features
+
+* expand allowList in ESLint config with additional identifiers ([17a1085](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/17a1085913257473c10b85e9746e8dba0d9cb9a4))
+
+
+
 # [2.5.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.4.0...v2.5.0) (2026-02-18)
 
 
