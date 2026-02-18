@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.1.0...v2.1.1) (2026-02-18)
+
+
+### Bug Fixes
+
+* switch unicorn/filename-case rule from pascalCase to camelCase ([e7c7b3f](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/e7c7b3fbdd8486075a5f1f96de7699d376fa85ec))
+
+
+
 # [2.1.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.0.0...v2.1.0) (2026-02-18)
 
 
