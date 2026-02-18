@@ -97,6 +97,19 @@ export default defineConfigWithVueTs(
   // Unicorn (Opinionated)
   pluginUnicorn.configs.recommended,
   {
+    rules: {
+      "unicorn/explicit-length-check": "off",
+      "unicorn/prevent-abbreviations": [
+        "error",
+        {
+          allowList: {
+            utils: true,
+          },
+        },
+      ],
+    },
+  },
+  {
     files: ["**/*.vue"],
     rules: {
       "unicorn/filename-case": [
@@ -123,7 +136,7 @@ export default defineConfigWithVueTs(
   // 2. Vue Component Rules
   // ==============================================================================
   {
-    files: ["src/**/*.vue"],
+    files: ["**/*.vue"],
     rules: {
       "vue/multi-word-component-names": [
         "error",
@@ -189,7 +202,7 @@ export default defineConfigWithVueTs(
   // 3. Feature Boundaries & Architecture
   // ==============================================================================
   {
-    files: ["src/**/*.{ts,vue}"],
+    files: ["**/*.{ts,vue}"],
     rules: {
       "no-restricted-imports": [
         "error",
@@ -251,7 +264,7 @@ export default defineConfigWithVueTs(
   // 5. Custom Local Rules
   // ==============================================================================
   {
-    files: ["src/**/*.{ts,vue}"],
+    files: ["**/*.{ts,vue}"],
     plugins: { local: localRules },
     rules: {
       "local/composable-must-use-vue": "error",
