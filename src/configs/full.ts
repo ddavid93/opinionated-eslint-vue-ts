@@ -139,7 +139,7 @@ export default defineConfigWithVueTs(
     },
   },
   {
-    files: ["src/**/use*.ts"],
+    files: ["**/use*.ts"],
     rules: {
       "unicorn/filename-case": [
         "error",
@@ -240,7 +240,7 @@ export default defineConfigWithVueTs(
   // 4. Testing Rules (Vitest)
   // ==============================================================================
   {
-    files: ["src/**/__tests__/*"],
+    files: ["**/__tests__/*"],
     plugins: { vitest: pluginVitest },
     rules: {
       ...pluginVitest.configs.recommended.rules,
@@ -254,7 +254,7 @@ export default defineConfigWithVueTs(
   },
 
   {
-    files: ["src/**/__tests__/**/*.{ts,spec.ts}"],
+    files: ["**/__tests__/**/*.{ts,spec.ts}"],
     rules: {
       "no-restricted-imports": [
         "error",
