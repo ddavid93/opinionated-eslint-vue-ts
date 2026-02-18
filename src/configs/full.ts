@@ -106,6 +106,7 @@ export default defineConfigWithVueTs(
           allowList: {
             Args: true,
             Fn: true,
+            Params: true,
             Prev: true,
             Props: true,
             Ref: true,
