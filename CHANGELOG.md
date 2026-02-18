@@ -1,3 +1,12 @@
+# [2.5.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.4.0...v2.5.0) (2026-02-18)
+
+
+### Features
+
+* update ESLint config to disable `unicorn/switch-case-braces` and expand allowList ([2524f61](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/2524f61742cf5f428e39d3315cb82b92053729e0))
+
+
+
 # [2.4.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.3.0...v2.4.0) (2026-02-18)
 
 
