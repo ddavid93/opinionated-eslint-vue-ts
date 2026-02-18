@@ -1,3 +1,15 @@
+# [2.4.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.3.0...v2.4.0) (2026-02-18)
+
+
+### Features
+
+* add `props` to allowList in ESLint config ([8649379](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/864937969705a8d5e365e127c5528f88f04debcc))
+* add `release` script to streamline versioning and publishing ([0638647](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/0638647823ce310a151f4fd65bedabb9f706bdfa))
+* add `release` script to streamline versioning and publishing ([8f6ad64](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/8f6ad649a8f0d856eb9975b41f8564026a1e50c5))
+* migrate `release` script to separate Node.js module for better maintainability ([f35f56a](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/f35f56adb04956b7bd258defb69b9fbb51ef6038))
+
+
+
 # [2.3.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.2.0...v2.3.0) (2026-02-18)
 
 
