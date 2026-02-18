@@ -6,7 +6,6 @@ import {
 } from "@vue/eslint-config-typescript";
 import skipFormatting from "@vue/eslint-config-prettier/skip-formatting";
 import globals from "globals";
-import pluginImportX from "eslint-plugin-import-x";
 import pluginOxlint from "eslint-plugin-oxlint";
 import prettier from "eslint-plugin-prettier/recommended";
 import ts from "typescript-eslint";
@@ -191,17 +190,14 @@ export default defineConfigWithVueTs(
   // ==============================================================================
   {
     files: ["src/**/*.{ts,vue}"],
-    plugins: { "import-x": pluginImportX },
     rules: {
-      "import-x/no-restricted-paths": [
+      "no-restricted-imports": [
         "error",
         {
-          zones: [
+          patterns: [
             {
-              target: "./src/features",
-              from: "./src/views",
-              message:
-                "❌ UNIDIRECTIONAL FLOW: Features cannot import from views. Views orchestrate features.",
+              group: ["**/views/**"],
+              message: "❌ UNIDIRECTIONAL FLOW: Features cannot import from views. Views orchestrate features.",
             },
           ],
         },

@@ -24,7 +24,6 @@ Install required peer dependencies for your stack:
 - eslint-plugin-prettier
 - @vue/eslint-config-typescript
 - @vue/eslint-config-prettier
-- eslint-plugin-import-x
 - eslint-plugin-oxlint
 - eslint-plugin-unicorn
 - @vitest/eslint-plugin
@@ -71,7 +70,7 @@ This package bundles a full flat config that layers:
 - Prettier integration
 - Custom local rules (documented below)
 
-Per request, the default ESLint rules and Unicorn rules are not documented here. Only explicitly configured rules are documented, including Vue, TypeScript ESLint, Vitest, Import-X, and local custom rules.
+Per request, the default ESLint rules and Unicorn rules are not documented here. Only explicitly configured rules are documented, including Vue, TypeScript ESLint, Vitest, and local custom rules.
 
 ## Rule Reference (Explicitly Configured)
 
@@ -279,20 +278,6 @@ it('works', () => {
 it('works', () => {
   expect(something).toBe(true)
 })
-```
-
-### Import-X Rule
-
-#### `import-x/no-restricted-paths`
-
-Defines architectural import boundaries (configured to prevent `src/features` importing from `src/views`).
-
-```ts
-// ❌ Bad (in src/features/...)
-import { SomeView } from '@/views/SomeView'
-
-// ✅ Good
-import { SomeFeature } from '@/features/some-feature'
 ```
 
 ### Vue Rules
