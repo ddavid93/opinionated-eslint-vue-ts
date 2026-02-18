@@ -1,3 +1,12 @@
+# [2.7.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.6.0...v2.7.0) (2026-02-18)
+
+
+### Features
+
+* add `Params` to allowList in ESLint config ([4ead254](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/4ead2546ae07805425937773df9637d8106d83e7))
+
+
+
 # [2.6.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.5.0...v2.6.0) (2026-02-18)
 
 
