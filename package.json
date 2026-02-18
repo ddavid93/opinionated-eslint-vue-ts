@@ -44,7 +44,7 @@
     "install-packages": "pnpm install",
     "prepare": "husky",
     "prepublishOnly": "pnpm build",
-    "release": "pnpm version && git push && git push --follow-tags && pnpm publish",
+    "release": "node scripts/release.mjs",
     "upgrade-packages": "pnpm upgrade --latest",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
