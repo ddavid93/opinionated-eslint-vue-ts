@@ -108,6 +108,17 @@ export default defineConfigWithVueTs(
       ],
     },
   },
+  {
+    files: ["src/**/use*.ts"],
+    rules: {
+      "unicorn/filename-case": [
+        "error",
+        {
+          case: "pascalCase",
+        },
+      ],
+    },
+  },
 
   // ==============================================================================
   // 2. Vue Component Rules
