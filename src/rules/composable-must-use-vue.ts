@@ -6,6 +6,7 @@ const VALID_VUE_SOURCES = new Set<string>([
   "@vueuse/core",
   "vue-router",
   "vue-i18n",
+  "@inertiajs/vue3",
 ]);
 
 function isComposableFilename(filename: string): boolean {
