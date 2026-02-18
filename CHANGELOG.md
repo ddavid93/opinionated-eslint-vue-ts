@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.0.0...v2.1.0) (2026-02-18)
+
+
+### Features
+
+* enforce pascalCase for hook filenames in ESLint configuration ([bdefb69](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/bdefb69ec618441d3b5cb7a407b8f53b1ee8a064))
+
+
+
 # [2.0.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v1.0.0...v2.0.0) (2026-02-17)
 
 
