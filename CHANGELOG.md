@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.2.0...v2.3.0) (2026-02-18)
+
+
+### Features
+
+* update ESLint config to adjust Unicorn rules and broaden file matching patterns ([1582168](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/158216803250168a8dd5490e5b10a8b704a436d5))
+
+
+
 # [2.2.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.1.1...v2.2.0) (2026-02-18)
 
 
