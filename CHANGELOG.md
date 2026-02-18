@@ -1,3 +1,12 @@
+# [2.8.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.7.0...v2.8.0) (2026-02-18)
+
+
+### Features
+
+* expand allowList in ESLint config with `@inertiajs/vue3` ([bf2caf5](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/bf2caf5e3fc513e75906f77fd7e07788fe0d7484))
+
+
+
 # [2.7.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.6.0...v2.7.0) (2026-02-18)
 
 
