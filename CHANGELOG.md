@@ -1,3 +1,12 @@
+# [2.9.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.8.0...v2.9.0) (2026-02-18)
+
+
+### Features
+
+* broaden file matching patterns in ESLint config for better rule application ([a6da163](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/a6da1638ed57c1f63e46059256f59fed06afd992))
+
+
+
 # [2.8.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.7.0...v2.8.0) (2026-02-18)
 
 
