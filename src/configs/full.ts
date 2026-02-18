@@ -99,12 +99,18 @@ export default defineConfigWithVueTs(
   {
     rules: {
       "unicorn/explicit-length-check": "off",
+      "unicorn/switch-case-braces": "off",
       "unicorn/prevent-abbreviations": [
         "error",
         {
           allowList: {
             utils: true,
             props: true,
+            Props: true,
+            params: true,
+            paramName: true,
+            acc: true,
+            ev: true,
           },
         },
       ],
