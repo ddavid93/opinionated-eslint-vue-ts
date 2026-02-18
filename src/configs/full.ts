@@ -114,7 +114,7 @@ export default defineConfigWithVueTs(
       "unicorn/filename-case": [
         "error",
         {
-          case: "pascalCase",
+          case: "camelCase",
         },
       ],
     },
