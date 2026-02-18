@@ -104,6 +104,7 @@ export default defineConfigWithVueTs(
         {
           allowList: {
             utils: true,
+            props: true,
           },
         },
       ],
