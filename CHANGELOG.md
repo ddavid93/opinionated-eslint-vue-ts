@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.1.1...v2.2.0) (2026-02-18)
+
+
+### Features
+
+* remove `eslint-plugin-import-x` and update peer dependency specifications ([cb90224](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/cb902241f4f4aa3656092a626e3bedfde4ddc904))
+
+
+
 ## [2.1.1](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.1.0...v2.1.1) (2026-02-18)
 
 
