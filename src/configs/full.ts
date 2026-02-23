@@ -5,13 +5,13 @@ import {
   vueTsConfigs,
 } from "@vue/eslint-config-typescript";
 import skipFormatting from "@vue/eslint-config-prettier/skip-formatting";
-import globals from "globals";
 import pluginOxlint from "eslint-plugin-oxlint";
 import prettier from "eslint-plugin-prettier/recommended";
 import ts from "typescript-eslint";
 import pluginUnicorn from "eslint-plugin-unicorn";
 import vue from "eslint-plugin-vue";
 import localRules from "../plugin.js";
+import vueParser from "vue-eslint-parser";
 
 export default defineConfigWithVueTs(
   {
@@ -84,12 +84,15 @@ export default defineConfigWithVueTs(
 
   // Vue Recommended
   ...vue.configs["flat/recommended"],
+  // IMPORTANT: Vue SFC parsing
   {
-    files: ["*.vue", "**/*.vue"],
+    files: ["**/*.vue"],
     languageOptions: {
-      globals: globals.browser,
+      parser: vueParser,
       parserOptions: {
+        // this is the parser used *inside* <script> (and <script setup>)
         parser: ts.parser,
+        extraFileExtensions: [".vue"],
       },
     },
   },
@@ -228,7 +231,8 @@ export default defineConfigWithVueTs(
           patterns: [
             {
               group: ["**/views/**"],
-              message: "❌ UNIDIRECTIONAL FLOW: Features cannot import from views. Views orchestrate features.",
+              message:
+                "❌ UNIDIRECTIONAL FLOW: Features cannot import from views. Views orchestrate features.",
             },
           ],
         },
