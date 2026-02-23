@@ -1,3 +1,12 @@
+# [2.10.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.9.0...v2.10.0) (2026-02-23)
+
+
+### Features
+
+* integrate `vue-eslint-parser` for enhanced Vue SFC parsing ([ad49113](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/ad49113633386c2c98f92aa2c307e3904a67b054))
+
+
+
 # [2.9.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.8.0...v2.9.0) (2026-02-18)
 
 
