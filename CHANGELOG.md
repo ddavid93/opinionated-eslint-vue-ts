@@ -1,3 +1,7 @@
+# [2.12.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.11.0...v2.12.0) (2026-02-24)
+
+
+
 # [2.11.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.10.0...v2.11.0) (2026-02-23)
 
 
