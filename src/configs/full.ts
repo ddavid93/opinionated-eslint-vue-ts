@@ -103,6 +103,7 @@ export default defineConfigWithVueTs(
     rules: {
       "unicorn/explicit-length-check": "off",
       "unicorn/switch-case-braces": "off",
+      "unicorn/no-null": "off",
       "unicorn/prevent-abbreviations": [
         "error",
         {
