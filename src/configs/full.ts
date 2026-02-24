@@ -220,27 +220,6 @@ export default defineConfigWithVueTs(
   },
 
   // ==============================================================================
-  // 3. Feature Boundaries & Architecture
-  // ==============================================================================
-  {
-    files: ["**/*.{ts,vue}"],
-    rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          patterns: [
-            {
-              group: ["**/views/**"],
-              message:
-                "❌ UNIDIRECTIONAL FLOW: Features cannot import from views. Views orchestrate features.",
-            },
-          ],
-        },
-      ],
-    },
-  },
-
-  // ==============================================================================
   // 4. Testing Rules (Vitest)
   // ==============================================================================
   {

@@ -69,6 +69,7 @@ This package bundles a full flat config that layers:
 - Oxlint recommended
 - Prettier integration
 - Custom local rules (documented below)
+- Optional: Feature Boundaries & Architecture (manual enablement)
 
 Per request, the default ESLint rules and Unicorn rules are not documented here. Only explicitly configured rules are documented, including Vue, TypeScript ESLint, Vitest, and local custom rules.
 
@@ -746,6 +747,46 @@ Limits template depth to 7.
   </div>
 </div>
 ```
+
+### Feature Boundaries & Architecture
+
+This package previously included a rule to enforce unidirectional flow between features and views. This rule is now disabled by default as it requires a specific project architecture (Feature Folders).
+
+If your project follows this architecture, you can manually enable this rule in your `eslint.config.js`:
+
+```js
+// eslint.config.js
+import fullConfig from 'eslint-plugin-opinionated-vue-ts/configs/full'
+
+export default [
+  ...fullConfig,
+  {
+    files: ["**/*.{ts,vue}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["**/views/**"],
+              message: "❌ UNIDIRECTIONAL FLOW: Features cannot import from views. Views orchestrate features.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+]
+```
+
+#### Architectural Principle: Unidirectional Flow
+
+In a feature-based architecture, **Features** should be self-contained and reusable logic/UI units. **Views** (or Pages) are responsible for orchestrating these features. To maintain this hierarchy and prevent circular dependencies or tight coupling:
+
+1.  **Views** can import **Features**.
+2.  **Features** SHOULD NOT import from **Views**.
+
+This ensures that features remain independent of the specific pages they are used in.
 
 ## Releasing a New Version
 
