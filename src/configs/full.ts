@@ -266,13 +266,14 @@ export default defineConfigWithVueTs(
   // 5. Custom Local Rules
   // ==============================================================================
   {
-    files: ["**/*.{ts,vue}"],
+    files: ["**/*.{js,ts,vue}"],
     plugins: { local: localRules },
     rules: {
       "local/composable-must-use-vue": "error",
       "local/extract-condition-variable": "error",
       "local/no-let-in-describe": "error",
       "local/enforce-type-naming": "error",
+      "local/max-lines-per-file": ["error", { max: 150 }],
     },
   },
 

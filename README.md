@@ -52,6 +52,7 @@ export default [
       'local/extract-condition-variable': 'error',
       'local/no-let-in-describe': 'error',
       'local/enforce-type-naming': 'error',
+      'local/max-lines-per-file': ['error', { max: 150 }],
     },
   },
 ]
@@ -148,6 +149,21 @@ type User = { id: string }
 // ✅ Good
 interface IUser {}
 type UserType = { id: string }
+
+#### `local/max-lines-per-file`
+
+Limits JavaScript, TypeScript, and Vue files to a maximum number of lines (default `150`).
+
+```js
+// eslint.config.js
+export default [
+  {
+    rules: {
+      'local/max-lines-per-file': ['error', { max: 150 }],
+    },
+  },
+]
+```
 ```
 
 ### TypeScript ESLint Rules
