@@ -1,3 +1,12 @@
+# [2.20.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.19.0...v2.20.0) (2026-03-10)
+
+
+### Features
+
+* add imports-on-top ESLint rule and update documentation ([0e80f6e](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/0e80f6e778833f7b7cf1462ce8180ee3905e090e))
+
+
+
 # [2.19.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.18.0...v2.19.0) (2026-03-10)
 
 
