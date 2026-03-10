@@ -149,10 +149,16 @@ type User = { id: string }
 // ✅ Good
 interface IUser {}
 type UserType = { id: string }
+```
 
 #### `local/max-lines-per-file`
 
 Limits JavaScript, TypeScript, and Vue files to a maximum number of lines (default `150`).
+
+What it does:
+- Counts the total number of lines in each `*.js`, `*.ts`, and `*.vue` file.
+- Reports an ESLint error when a file has more lines than the configured `max`.
+- Uses `150` as the default limit when no `max` option is provided.
 
 ```js
 // eslint.config.js
@@ -164,9 +170,33 @@ export default [
   },
 ]
 ```
-```
 
 ### TypeScript ESLint Rules
+
+#### `no-unused-vars`
+
+Disallows unused JavaScript variables (configured to ignore names starting with `_`).
+
+```ts
+// ❌ Bad
+const foo = 1
+
+// ✅ Good
+const _foo = 1
+```
+
+#### `no-undef`
+
+Disallows usage of undeclared variables.
+
+```ts
+// ❌ Bad
+console.log(notDeclared)
+
+// ✅ Good
+const declared = 'ok'
+console.log(declared)
+```
 
 #### `@typescript-eslint/no-unused-vars`
 
@@ -204,6 +234,74 @@ const value = foo as string
 function isString(input: unknown): input is string {
   return typeof input === 'string'
 }
+```
+
+#### `complexity`
+
+Warns when function cyclomatic complexity exceeds `10`.
+
+```ts
+// ❌ Bad (too many branches)
+function decide(x: number) {
+  if (x === 1) return 'a'
+  else if (x === 2) return 'b'
+  else if (x === 3) return 'c'
+  else if (x === 4) return 'd'
+  else if (x === 5) return 'e'
+  else if (x === 6) return 'f'
+  else if (x === 7) return 'g'
+  else if (x === 8) return 'h'
+  else if (x === 9) return 'i'
+  else if (x === 10) return 'j'
+  return 'k'
+}
+
+// ✅ Good
+const decisionMap: Record<number, string> = {
+  1: 'a',
+  2: 'b',
+}
+```
+
+#### `no-nested-ternary`
+
+Disallows nested ternary expressions.
+
+```ts
+// ❌ Bad
+const label = isAdmin ? 'admin' : isEditor ? 'editor' : 'user'
+
+// ✅ Good
+let label = 'user'
+if (isAdmin) label = 'admin'
+else if (isEditor) label = 'editor'
+```
+
+#### `no-restricted-syntax`
+
+Configured here to disallow `enum` declarations and `else` blocks after `if`.
+
+```ts
+// ❌ Bad (enum)
+enum Role {
+  Admin = 'admin',
+}
+
+// ✅ Good
+type RoleType = 'admin' | 'user'
+
+// ❌ Bad (else)
+if (!user) {
+  return
+} else {
+  processUser(user)
+}
+
+// ✅ Good
+if (!user) {
+  return
+}
+processUser(user)
 ```
 
 ### Vitest Rules
@@ -295,6 +393,19 @@ it('works', () => {
 it('works', () => {
   expect(something).toBe(true)
 })
+```
+
+#### `no-restricted-imports` (tests only)
+
+In `**/__tests__/**/*.{ts,spec.ts}`, disallows direct `render` import from `vitest-browser-vue` and direct `mount` import from `@vue/test-utils`.
+
+```ts
+// ❌ Bad
+import { render } from 'vitest-browser-vue'
+import { mount } from '@vue/test-utils'
+
+// ✅ Good
+import { createTestApp } from '@/test/helpers/createTestApp'
 ```
 
 ### Vue Rules
