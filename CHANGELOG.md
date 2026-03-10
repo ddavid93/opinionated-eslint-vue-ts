@@ -1,3 +1,12 @@
+# [2.18.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.17.0...v2.18.0) (2026-03-10)
+
+
+### Features
+
+* add max-lines-per-file ESLint rule ([f4f9bf7](https://github.com/ddavid93/opinionated-eslint-vue-ts/commit/f4f9bf7d72757bc7a81a4a344fe7be19d4ca8313))
+
+
+
 # [2.17.0](https://github.com/ddavid93/opinionated-eslint-vue-ts/compare/v2.16.0...v2.17.0) (2026-02-24)
 
 
