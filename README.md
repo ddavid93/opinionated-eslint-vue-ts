@@ -52,6 +52,7 @@ export default [
       'local/extract-condition-variable': 'error',
       'local/no-let-in-describe': 'error',
       'local/enforce-type-naming': 'error',
+      'local/imports-on-top': 'error',
       'local/max-lines-per-file': ['error', { max: 150 }],
     },
   },
@@ -149,6 +150,25 @@ type User = { id: string }
 // ✅ Good
 interface IUser {}
 type UserType = { id: string }
+```
+
+#### `local/imports-on-top`
+
+Ensures all `import` declarations stay at the top of the file.
+
+What it does:
+- Allows `import` statements only before any other top-level statement.
+- Reports an error when an `import` appears after code (variables, functions, expressions, etc.).
+- Applies to `*.js`, `*.ts`, and `*.vue` files through the full config local rules block.
+
+```ts
+// ❌ Bad
+const user = getCurrentUser()
+import { getAccountNavItems } from '~/composables/admin/layout/accountNav'
+
+// ✅ Good
+import { getAccountNavItems } from '~/composables/admin/layout/accountNav'
+const user = getCurrentUser()
 ```
 
 #### `local/max-lines-per-file`

@@ -273,6 +273,7 @@ export default defineConfigWithVueTs(
       "local/extract-condition-variable": "error",
       "local/no-let-in-describe": "error",
       "local/enforce-type-naming": "error",
+      "local/imports-on-top": "error",
       "local/max-lines-per-file": ["error", { max: 150 }],
     },
   },
